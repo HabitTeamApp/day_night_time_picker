@@ -240,6 +240,7 @@ class TimeModelBindingState extends State<TimeModelBinding> {
   void onHourChange(double value) {
     setState(() {
       time = time.replacing(hour: value.round());
+	  widget.onChange(time.toTimeOfDay());
     });
   }
 
@@ -247,6 +248,7 @@ class TimeModelBindingState extends State<TimeModelBinding> {
   void onMinuteChange(double value) {
     setState(() {
       time = time.replacing(minute: value.ceil());
+	  widget.onChange(time.toTimeOfDay());
     });
   }
 
